@@ -12,8 +12,6 @@ class LSTMClassifier(nn.Module):
         # Estimation network
         self.estimation_net = nn.Sequential(
             nn.Linear(hidden_size, hidden_size),
-            #nn.ReLU(),
-            #nn.Linear(hidden_size, output_size),
         )
 
     def forward(self, x):

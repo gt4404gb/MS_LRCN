@@ -276,8 +276,8 @@ if torch.cuda.is_available():
 # input_features will be set after preprocessing
 learn_rate = 0.001
 batch_size = 1024
-epochs = 100 # Reduced from 200 for faster runs, adjust as needed
-proportion = 0.01 # Corresponds to 10% of original training data
+epochs = 100
+proportion = 0.01
 class_number = 15
 
 # BONUS Model Hyperparameters (Examples, adjust based on paper/tuning)
@@ -302,9 +302,7 @@ y = x.pop(x.columns[-1]).values
 x_train = np.array(y, dtype=np.float32) # 将数据转换为float32类型
 y_train = np.array(y, dtype=np.int64) # 将数据转换为int64类型
 
-#设置使用数据集比例
-proportion = 0.01
-# 随机划分，比例为70%的训练数据和30%的测试数据
+# 随机划分，比例为80%的训练数据和20%的测试数据
 x_train, x_test, y_train, y_test = train_test_split(x.values, y, train_size=80*proportion, test_size=20*proportion, random_state=42)
 
 print(x_train.shape, y_train.shape, x_test.shape, y_test.shape)

@@ -65,11 +65,7 @@ class LRCNencoder(nn.Module):
         self.hidden_size = hidden_size
         self.channel_size = channel_size
 
-        # ========== 三个Transformer Encoder层 ==========
-        # d_model 的设置逻辑和原代码保持一致
-        # encoder_layer1: d_model = input_size
-        # encoder_layer2: d_model = floor(input_size * 0.5)
-        # encoder_layer3: d_model = floor( ceil(input_size * 0.5) * 0.5 )
+        # ========== 三个 Encoder层 ==========
         self.encoder_layer1 = tf.EncoderLayer(
             d_model=input_size,
             gamma=gammas[0],

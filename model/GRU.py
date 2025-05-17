@@ -13,9 +13,6 @@ class GRUClassifier(nn.Module):
         # Estimation network
         self.estimation_net = nn.Sequential(
             nn.Linear(hidden_size, hidden_size),
-            #nn.ReLU(),
-            #nn.Linear(hidden_size, output_size),
-            #nn.Sigmoid()
         )
 
     def forward(self, x):

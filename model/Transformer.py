@@ -31,9 +31,6 @@ class TransformerClassifier(nn.Module):
         # Use the last token as the context
         h = h[:, -1, :]
 
-        # Use the estimation network for classification
-        #y_hat = self.estimation_net(h)
-        #不使用分类器
 
         return h, h
 

@@ -158,9 +158,6 @@ test = np.concatenate([x_test, y_test], axis=1)
 train = pd.DataFrame(train)
 test = pd.DataFrame(test)
 
-#train = pd.concat([x_train, y_train], axis=1)
-#test = pd.concat([x_test, y_test], axis=1)
-#val = pd.concat([x_val, y_val], axis=1)
 
 train.to_csv("kaggle_UNSW_NB15_full_training.csv", index=False)
 test.to_csv("kaggle_UNSW_NB15_full_testing.csv", index=False)

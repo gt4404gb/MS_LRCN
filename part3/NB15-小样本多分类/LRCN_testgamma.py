@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # In[1]:
-print("测试内容：BRCN，NB15小样本测试")
+print("测试内容：LRCN，gamma分组选择测试")
 from torch.nn import init, Parameter
 import matplotlib.patches as mpatches
 from sklearn.decomposition import PCA
@@ -44,12 +44,12 @@ proportion = 0.01*5
 
 
 #——————————————————————————数据集加载————————————————————————————————
-x_train = pd.read_csv("../data/UNSW-NB15/kaggle_UNSW_NB15_full_training.csv", low_memory=False)
+x_train = pd.read_csv("../../data/UNSW-NB15/kaggle_UNSW_NB15_full_training.csv", low_memory=False)
 num_cols = x_train.shape[1] #获取列数
 #提取出最后一列为y
 y_train = x_train.pop(x_train.columns[-1]).values
 
-x_test = pd.read_csv("../data/UNSW-NB15/kaggle_UNSW_NB15_full_edit_testing.csv", low_memory=False)
+x_test = pd.read_csv("../../data/UNSW-NB15/kaggle_UNSW_NB15_full_edit_testing.csv", low_memory=False)
 num_cols = x_test.shape[1] #获取列数
 y_test = x_test.pop(x_test.columns[-1]).values
 

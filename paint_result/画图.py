@@ -23,11 +23,11 @@ bonus = [x * 100 for x in [0.8612, 0.8665, 0.8891, 0.8941, 0.9043]]
 plt.figure(figsize=(10, 8), dpi=300)
 
 # 绘制五条折线
-plt.plot(x, lrcn, color='#1f77b4', marker='o', linewidth=2, markersize=6, label='LRCN')
-plt.plot(x, transformer, color='#ff7f0e', marker='s', linewidth=2, markersize=6, label='Transformer')
-plt.plot(x, lstm, color='#2ca02c', marker='^', linewidth=2, markersize=6, label='LSTM')
-plt.plot(x, gru, color='#d62728', marker='d', linewidth=2, markersize=6, label='GRU')
-plt.plot(x, bonus, color='#9467bd', marker='*', linewidth=2, markersize=7, label='BONUS')
+plt.plot(x, lrcn, color='#1f77b4', marker='o', linewidth=1.5, markersize=10, label='LRCN')
+plt.plot(x, transformer, color='#ff7f0e', marker='s', linewidth=1.5, markersize=10, label='Transformer')
+plt.plot(x, lstm, color='#2ca02c', marker='^', linewidth=1.5, markersize=10, label='LSTM')
+plt.plot(x, gru, color='#d62728', marker='d', linewidth=1.5, markersize=10, label='GRU')
+plt.plot(x, bonus, color='#9467bd', marker='*', linewidth=1.5, markersize=12, label='BONUS')
 
 # 为每个数据点添加标注（显示两位小数并添加%）
 def annotate_points(x_vals, y_vals):
@@ -41,11 +41,11 @@ annotate_points(x, gru)
 annotate_points(x, bonus)
 
 # 设置 x 轴刻度
-plt.xticks(x, x_labels, fontproperties=en_font, fontsize=24)
+plt.xticks(x, x_labels, fontproperties=en_font, fontsize=22)
 
 # === 设置坐标轴标签 ===
-plt.xlabel('训练集使用比例', fontproperties=ch_font, fontsize=24)
-plt.ylabel('F1分数 (%)', fontproperties=ch_font, fontsize=24)  # 在y轴标签添加%
+plt.xlabel('训练集使用比例', fontproperties=ch_font, fontsize=22)
+plt.ylabel('F1分数 (%)', fontproperties=ch_font, fontsize=22)  # 在y轴标签添加%
 
 # === Y轴范围 & 刻度：调整为百分数范围 ===
 plt.ylim([84, 91])  # 从84%到91%
