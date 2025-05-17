@@ -9,12 +9,12 @@ def LRCCNdataload(proportion=0.9,device='cpu',batch_size=1024):
     # 随机划分训练集，取50%作为训练集
 
     #——————————————————————————数据集加载————————————————————————————————
-    x_train = pd.read_csv("../data/UNSW-NB15/kaggle_UNSW_NB15_full_training.csv", low_memory=False)
+    x_train = pd.read_csv("../../data/UNSW-NB15/kaggle_UNSW_NB15_full_training.csv", low_memory=False)
     num_cols = x_train.shape[1] #获取列数
     #提取出最后一列为y
     y_train = x_train.pop(x_train.columns[-1]).values
 
-    x_test = pd.read_csv("../data/UNSW-NB15/kaggle_UNSW_NB15_full_edit_testing.csv", low_memory=False)
+    x_test = pd.read_csv("../../data/UNSW-NB15/kaggle_UNSW_NB15_full_edit_testing.csv", low_memory=False)
     num_cols = x_test.shape[1] #获取列数
     y_test = x_test.pop(x_test.columns[-1]).values
 
