@@ -16,10 +16,9 @@ from itertools import product
 # 导入各模块（请根据实际项目目录调整导入路径）
 from LRCCNdataloader_2017 import LRCCNdataload
 from LRCCNpretrain_2017 import pretrain_model
-from LRCCNbaseline_2017 import baseline_classifier2D
+from LRCCNbaseline_2017 import baseline_classifier
 from LRCCNmoco_2017 import ContrastiveLearningKNN
 from LRCCNFinalClassifier_2017 import LOFtest, KNNtest, LOF_KNN_test, ODINtest
-from deepBDC import BDC
 from model.LRCN2D import LRCNAutoencoder, LRCNencoder, LRCNdecoder
 
 
@@ -34,8 +33,8 @@ class Config:
     CHANNEL_SIZE = 1             # 输入通道数
 
     # 模型参数
-    INPUT_DIM = 204              # 输入特征维度
-    HIDDEN_DIM = 5               # 隐藏层维度
+    INPUT_DIM = 78              # 输入特征维度
+    HIDDEN_DIM = 3               # 隐藏层维度
     CLASS_NUM = 9                # 分类类别数
     USE_BDC = True               # 启用 BDC 模块
     BDC_INPUT_DIMENSION_REDUCTION = 16   # BDC 降维维度（需与 Encoder 输出匹配）
@@ -174,7 +173,7 @@ def train_and_evaluate(train_loader, train_loader2, test_loader, params):
 
     # 基准分类器
     print("\n---------- 原始分类器效果 ---------")
-    baseline_classifier2D(
+    baseline_classifier(
         encoder, train_loader2, test_loader,
         hidden_size=Config.BDC_OUTPUT_DIMENSION_REDUCTION,
         epochs=Config.PRETRAIN_EPOCHS,
@@ -196,7 +195,7 @@ def train_and_evaluate(train_loader, train_loader2, test_loader, params):
         )
 
         print("\n---------- 自监督预训练后的分类器效果 ---------")
-        baseline_classifier2D(
+        baseline_classifier(
             pretrain_encoder, train_loader2, test_loader,
             hidden_size=Config.BDC_OUTPUT_DIMENSION_REDUCTION,
             epochs=Config.PRETRAIN_EPOCHS,
@@ -225,7 +224,7 @@ def train_and_evaluate(train_loader, train_loader2, test_loader, params):
         )
 
         print("\n---------- 对比学习后的分类器效果 ---------")
-        baseline_classifier2D(
+        baseline_classifier(
             contrastive_encoder.encoder_q, train_loader2, test_loader,
             hidden_size=Config.HIDDEN_DIM,
             epochs=Config.PRETRAIN_EPOCHS,

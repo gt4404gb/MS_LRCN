@@ -45,7 +45,7 @@ def map_labels(y, is_test=False):
 
 def LRCCNdataload(proportion=0.9, device='cpu', batch_size=1024):
     # ————————————————————————————数据集加载————————————————————————————————
-    x = pd.read_csv("../data/CICIDS2017/cicids2017.csv", low_memory=False)
+    x = pd.read_csv("../../data/CICIDS2017/cicids2017.csv", low_memory=False)
     num_cols = x.shape[1]  # 获取列数
     # 提取出最后一列为 y，并转换为 numpy 数组
     y = x.pop(x.columns[-1]).values

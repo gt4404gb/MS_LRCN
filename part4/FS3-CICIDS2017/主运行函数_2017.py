@@ -97,7 +97,7 @@ class Config:
 
 # 日志配置
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-log_filename = f"../log/log_mask{Config.PRETRAIN_MASK_RATIO}_qs{Config.QUEUE_SIZE}_mo{Config.MOMENTUM}_t{Config.TEMPERATURE}_k{Config.TOP_K}_lofn{Config.LOF_N_NEIGHBORS}_{timestamp}.log"
+log_filename = f"log/log_mask{Config.PRETRAIN_MASK_RATIO}_qs{Config.QUEUE_SIZE}_mo{Config.MOMENTUM}_t{Config.TEMPERATURE}_k{Config.TOP_K}_lofn{Config.LOF_N_NEIGHBORS}_{timestamp}.log"
 logging.basicConfig(filename=log_filename, level=logging.INFO, format='%(message)s')
 console = logging.StreamHandler()
 console.setLevel(logging.INFO)
