@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # In[1]:
-print("测试内容：LSTM多分类Baseline测试")
+print("测试内容：GRU多分类Baseline测试")
 from torch.nn import init, Parameter
 import matplotlib.patches as mpatches
 from sklearn.decomposition import PCA
@@ -38,7 +38,7 @@ learn_rate = 0.001
 batch_size = 1024
 class_number = 10  #分类类别
 epochs = 100
-proportion = 0.01*5
+proportion = 0.01*1
 
 # In[3]:
 

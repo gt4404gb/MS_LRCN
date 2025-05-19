@@ -38,7 +38,7 @@ learn_rate = 0.001
 batch_size = 1024
 class_number = 10  #分类类别
 epochs = 100
-proportion = 0.1*1
+proportion = 0.01*1
 
 # In[3]:
 
@@ -59,17 +59,6 @@ y_train = np.array(y_train, dtype=np.int64) # 将数据转换为int64类型
 x_test = np.array(x_test, dtype=np.float32) # 将数据转换为float32类型
 y_test = np.array(y_test, dtype=np.int64) # 将数据转换为int64类型
 
-'''
-# 合并训练和测试集
-x = np.concatenate((x_train, x_test), axis=0)
-y = np.concatenate((y_train, y_test), axis=0)
-
-# 随机划分，比例为70%的训练数据和30%的测试数据
-#设置使用数据集比例
-proportion = 0.01
-# 随机划分，比例为70%的训练数据和30%的测试数据
-x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=50*proportion, test_size=50*proportion, random_state=42)
-'''
 # 随机划分训练集，取50%作为训练集
 x_train, _, y_train, _ = train_test_split(x_train, y_train, train_size=proportion, random_state=42)
 

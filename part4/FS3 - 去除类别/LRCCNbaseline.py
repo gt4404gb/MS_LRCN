@@ -63,11 +63,11 @@ def Evaluation(y_true, y_pred_total,y_hat_total=None,title="Unamed"):
     print(f"FPR@TPR={target_tpr} by class:", {k: round(v, 4) for k, v in fpr_at_tpr.items()},"\n")
     print("Mean FPR@TPR=0.95: {:.4f}".format(np.mean(list(fpr_at_tpr.values()))),"\n")
 
-    draw_confusion_matrix(y_true, y_pred_total, title=title + " 混淆矩阵" + f"{f1:.4f}",classes=classes)
+    #draw_confusion_matrix(y_true, y_pred_total, title=title + " 混淆矩阵" + f"{f1:.4f}",classes=classes)
 
     # UMAP 可视化
-    if(y_hat_total is not None):
-        drawplt(y_true, y_hat_total, title=title)
+    #if(y_hat_total is not None):
+    #    drawplt(y_true, y_hat_total, title=title)
 
     return f1  # 返回 F1 分数
 

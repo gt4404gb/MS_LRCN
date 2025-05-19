@@ -361,7 +361,7 @@ print(f"模型已保存至 {model_path_with_f1}，F1 分数: {f1_score:.4f}")
 
 #[8]
 # 加载已保存的模型
-model_path = "contrastive_encoder_f1_0_8765.pth"  # 可修改为其他路径
+model_path = "contrastive_encoder_f1_0_8884.pth"  # 可修改为其他路径
 encoder = MoCoEncoderKNN(
     base_encoder=LRCNencoder(input_size=Config.INPUT_DIM, hidden_size=Config.HIDDEN_DIM),
     feature_dim=Config.FEATURE_DIM,
